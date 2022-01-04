@@ -1,0 +1,146 @@
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select{margin:0}html{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}img,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
+
+:root {
+    --dark-1: #111111;
+    --dark-2: #202020;
+    --gray: #424242;
+    --whity: #e3e3e3;
+    --blue: #bad5ff;
+    --error: #cc3737;
+}
+
+body {
+    font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    width: 100%;
+    min-height: 100%;
+    font-size: 110%;
+
+    color: white;
+    background: var(--dark-1);
+}
+
+main {
+    width: 70%;
+    margin: auto;
+}
+
+div.container {
+    padding: 1em;
+    background: var(--dark-2);
+}
+
+h1.title {
+    padding: 1em 0;
+    font-size: xx-large;
+}
+
+div.description {
+    font-size: large;
+    padding-bottom: 1em;
+}
+
+a {
+    color: var(--blue);
+}
+
+label[for=input_base64] {
+    font-size: larger;
+}
+
+input#input_base64 {
+    margin-top: 0.75em;
+    width: 100%;
+}
+
+
+input:focus {
+    outline: none;
+}
+
+p#result-info-text {
+    padding: 0.5em;
+    border: solid 1px;
+    border-bottom: hidden;
+    inline-size: fit-content;
+    font-style: italic;
+}
+
+.error-input-border {
+    border: 2px solid var(--error);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+}
+  
+td, th {
+    border: 1px solid var(--whity);
+    text-align: left;
+    padding: 0.5em;
+    word-wrap: break-word;
+}
+
+/* Decoded cells */
+/* th:nth-child(even), td:nth-child(even) {
+
+} */
+
+/* Index cells */
+th:nth-child(odd), td:nth-child(odd) {
+    width: 3em;
+    text-align: center;
+}
+
+/* Solution cell */
+tr:first-child td:nth-child(2) {
+    background: var(--gray);
+}
+
+
+.copy-icon {
+    opacity: 0.4;
+    background: var(--whity) url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2Vu ZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1 Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVy c2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3Jn LzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94 bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCA2NCA2NCIgZW5h YmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNjQgNjQiIHhtbDpzcGFjZT0icHJlc2Vy dmUiPg0KPGcgaWQ9IlRleHQtZmlsZXMiPg0KCTxwYXRoIGQ9Ik01My45NzkxNDg5 LDkuMTQyOTAwNUg1MC4wMTA4NDljLTAuMDgyNjk4OCwwLTAuMTU2MjAwNCwwLjAy ODM5OTUtMC4yMzMxMDA5LDAuMDQ2OTk5OVY1LjAyMjgNCgkJQzQ5Ljc3Nzc0ODEs Mi4yNTMsNDcuNDczMTQ4MywwLDQ0LjYzOTg0NjgsMGgtMzQuNDIyNTk2QzcuMzgz OTUxNywwLDUuMDc5MzUxOSwyLjI1Myw1LjA3OTM1MTksNS4wMjI4djQ2Ljg0MzI5 OTkNCgkJYzAsMi43Njk3OTgzLDIuMzA0NTk5OCw1LjAyMjgwMDQsNS4xMzc4OTk5 LDUuMDIyODAwNGg2LjAzNjcwMDJ2Mi4yNjc4OTg2QzE2LjI1Mzk1Miw2MS44Mjc0 MDAyLDE4LjQ3MDI1MTEsNjQsMjEuMTk1NDUxNyw2NA0KCQloMzIuNzgzNjk5YzIu NzI1MjAwNywwLDQuOTQxNDk3OC0yLjE3MjU5OTgsNC45NDE0OTc4LTQuODQzMjAw N1YxMy45ODYxMDAyDQoJCUM1OC45MjA2NDY3LDExLjMxNTUwMDMsNTYuNzA0MzQ5 NSw5LjE0MjkwMDUsNTMuOTc5MTQ4OSw5LjE0MjkwMDV6IE03LjExMTA1MTYsNTEu ODY2MTAwM1Y1LjAyMjgNCgkJYzAtMS42NDg3OTk5LDEuMzkzODk5OS0yLjk5MDk5 OTksMy4xMDYyMDAyLTIuOTkwOTk5OWgzNC40MjI1OTZjMS43MTIzMDMyLDAsMy4x MDYyMDEyLDEuMzQyMiwzLjEwNjIwMTIsMi45OTA5OTk5djQ2Ljg0MzI5OTkNCgkJ YzAsMS42NDg3OTk5LTEuMzkzODk4LDIuOTkxMTAwMy0zLjEwNjIwMTIsMi45OTEx MDAzaC0zNC40MjI1OTZDOC41MDQ5NTE1LDU0Ljg1NzIwMDYsNy4xMTEwNTE2LDUz LjUxNDkwMDIsNy4xMTEwNTE2LDUxLjg2NjEwMDN6DQoJCSBNNTYuODg4ODQ3NCw1 OS4xNTY3OTkzYzAsMS41NTA2MDItMS4zMDU1LDIuODExNTAwNS0yLjkwOTY5ODUs Mi44MTE1MDA1aC0zMi43ODM2OTkNCgkJYy0xLjYwNDIwMDQsMC0yLjkwOTc5OTYt MS4yNjA4OTg2LTIuOTA5Nzk5Ni0yLjgxMTUwMDV2LTIuMjY3ODk4NmgyNi4zNTQx OTQ2DQoJCWMyLjgzMzMwMTUsMCw1LjEzNzkwMTMtMi4yNTMwMDIyLDUuMTM3OTAx My01LjAyMjgwMDRWMTEuMTI3NTk5N2MwLjA3NjkwMDUsMC4wMTg2MDA1LDAuMTUw NDAyMSwwLjA0Njk5OTksMC4yMzMxMDA5LDAuMDQ2OTk5OQ0KCQloMy45NjgyOTk5 YzEuNjA0MTk4NSwwLDIuOTA5Njk4NSwxLjI2MDkwMDUsMi45MDk2OTg1LDIuODEx NTAwNVY1OS4xNTY3OTkzeiIvPg0KCTxwYXRoIGQ9Ik0zOC42MDMxNDk0LDEzLjIw NjM5OTlIMTYuMjUzOTUyYy0wLjU2MTUwMDUsMC0xLjAxNTkwMDYsMC40NTQyOTk5 LTEuMDE1OTAwNiwxLjAxNTgwMDUNCgkJYzAsMC41NjE1OTk3LDAuNDU0NDAwMSwx LjAxNTg5OTcsMS4wMTU5MDA2LDEuMDE1ODk5N2gyMi4zNDkxOTc0YzAuNTYxNTAw NSwwLDEuMDE1ODk5Ny0wLjQ1NDI5OTksMS4wMTU4OTk3LTEuMDE1ODk5Nw0KCQlD MzkuNjE5MDQ5MSwxMy42NjA2OTk4LDM5LjE2NDY1LDEzLjIwNjM5OTksMzguNjAz MTQ5NCwxMy4yMDYzOTk5eiIvPg0KCTxwYXRoIGQ9Ik0zOC42MDMxNDk0LDIxLjMz MzQwMDdIMTYuMjUzOTUyYy0wLjU2MTUwMDUsMC0xLjAxNTkwMDYsMC40NTQyOTk5 LTEuMDE1OTAwNiwxLjAxNTc5ODYNCgkJYzAsMC41NjE1MDA1LDAuNDU0NDAwMSwx LjAxNTkwMTYsMS4wMTU5MDA2LDEuMDE1OTAxNmgyMi4zNDkxOTc0YzAuNTYxNTAw NSwwLDEuMDE1ODk5Ny0wLjQ1NDQwMSwxLjAxNTg5OTctMS4wMTU5MDE2DQoJCUMz OS42MTkwNDkxLDIxLjc4NzcwMDcsMzkuMTY0NjUsMjEuMzMzNDAwNywzOC42MDMx NDk0LDIxLjMzMzQwMDd6Ii8+DQoJPHBhdGggZD0iTTM4LjYwMzE0OTQsMjkuNDYw MzAwNEgxNi4yNTM5NTJjLTAuNTYxNTAwNSwwLTEuMDE1OTAwNiwwLjQ1NDM5OTEt MS4wMTU5MDA2LDEuMDE1ODk5Nw0KCQlzMC40NTQ0MDAxLDEuMDE1ODk5NywxLjAx NTkwMDYsMS4wMTU4OTk3aDIyLjM0OTE5NzRjMC41NjE1MDA1LDAsMS4wMTU4OTk3 LTAuNDU0Mzk5MSwxLjAxNTg5OTctMS4wMTU4OTk3DQoJCVMzOS4xNjQ2NSwyOS40 NjAzMDA0LDM4LjYwMzE0OTQsMjkuNDYwMzAwNHoiLz4NCgk8cGF0aCBkPSJNMjgu NDQ0NDQ4NSwzNy41ODcyOTkzSDE2LjI1Mzk1MmMtMC41NjE1MDA1LDAtMS4wMTU5 MDA2LDAuNDU0Mzk5MS0xLjAxNTkwMDYsMS4wMTU4OTk3DQoJCXMwLjQ1NDQwMDEs MS4wMTU4OTk3LDEuMDE1OTAwNiwxLjAxNTg5OTdoMTIuMTkwNDk2NGMwLjU2MTUw MjUsMCwxLjAxNTgwMDUtMC40NTQzOTkxLDEuMDE1ODAwNS0xLjAxNTg5OTcNCgkJ UzI5LjAwNTk1MDksMzcuNTg3Mjk5MywyOC40NDQ0NDg1LDM3LjU4NzI5OTN6Ii8+ DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwv Zz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0K PGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4N CjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==') no-repeat center center;
+    background-size: 80%;
+    border: 1px solid var(--whity);
+    border-radius: 1px;
+    cursor: pointer;
+    height: 2.5em;
+    width: 2.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    transition: opacity 0.2s;
+}
+
+.copy-icon:hover {
+    opacity: 1;
+}
+
+.copy-text {
+    width: 100%;
+    margin-top: -1em;
+    position: absolute;
+    inline-size: fit-content;
+    
+    opacity: 0;
+    cursor: pointer;
+
+    color: var(--dark-1);
+    background: var(--whity);
+    
+    font-size: smaller;
+    text-align: center;
+    transition: opacity 0.2s;
+
+    z-index: 2;
+}
+
+p#author {
+    opacity: 0.6;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    margin: 1em;
+    text-align: right;
+}

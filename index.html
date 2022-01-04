@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0">
+
+    <title>Base64 decoder | Decode multiple times</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./base64.js"></script>
+</head>
+
+<body>
+
+    <main>
+
+        <div class="container">
+            <h1 class="title">Base64 decoder <span style="font-weight: 300">| Decode multiple times</span></h1>
+            <div class="description">
+                A simple tool for automating the decoding of multiple times <a
+                    href="https://en.wikipedia.org/wiki/Base64" target="_blank">base64</a> encoded flags. <i>Great for CTFs.<br>Calculations
+                done locally. String is base64 decoded until it can't be decoded anymore.</i>
+            </div>
+        </div>
+
+        <hr>
+        <br><br>
+
+        <div class="container">
+
+            <label for="input_base64">Base64 string to decode:</label>
+            <input type="text" id="input_base64" name="input_base64" oninput="fill_table()"
+                value="VTBkV2MySkhPR2M0U2l0T2JGRnlRMjlWYUhaaVIwVm9RM1JETHpCWlJGRjFUa041TUV4WVVtZG5jbXQyWVVSc2NHSXdQUT09">
+
+            <br><br><br><br>
+            <p id="result-info-text"></p>
+        <div>
+            <!-- Output -->
+            <table id="results">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>decoded string</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        
+        <p id="author">Author: Uku Sõrmus (GitHub: 3xploit-hunt)</p>
+    </main>
+</body>
+
+</html>
